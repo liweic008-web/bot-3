@@ -1,0 +1,29 @@
+name: Honkai Star Rail Auto Sign
+
+on:
+  schedule:
+    # 避開整點！換算台灣時間每天深夜 00:27 自動簽到 (英國時間 16:27)
+    - cron: '27 16 * * *'
+  workflow_dispatch: # 保留手動觸發按鈕
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Auto Sign Script
+        env:
+          HOYO_COOKIE: ${{ secrets.HOYO_COOKIE }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python main.py
