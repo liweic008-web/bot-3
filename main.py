@@ -32,9 +32,9 @@ def do_check_in():
     if code == 0:
         status_msg = "🎉 **【星鐵自動簽到成功！】**\n成功領到今天的簽到獎勵囉！"
     elif code == -5003:
-        status_msg = "ℹ️ **【星鐵簽到提醒】**\n今天已經簽到過囉，不用重複簽～"
+        status_msg = "**【星鐵簽到提醒】**\n今天已經簽到過囉，不用重複簽～"
     else:
-        status_msg = f"⚠️ **【星鐵簽到失敗】**\n錯誤代碼：`{code}`\n訊息：{msg}"
+        status_msg = f"**【星鐵簽到失敗】**\n錯誤代碼：`{code}`\n訊息：{msg}"
         
     print(status_msg)
     send_discord_notification(status_msg)
