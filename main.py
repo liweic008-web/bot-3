@@ -12,9 +12,11 @@ SIGN_URL = f"https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=zh-tw&act
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Referer": "https://act.hoyolab.com/",
-    "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+    # 把 Accept-Language 改成日文優先
+    "Accept-Language": "ja-JP,ja;q=0.9,en-US;q=0.8,en;q=0.7",
     "Cookie": HOYO_COOKIE
 }
+
 
 def do_check_in():
     if not HOYO_COOKIE:
