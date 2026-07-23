@@ -7,7 +7,7 @@ DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 
 # 2. 星鐵 (HoYoLAB 國際服) 的官方簽到設定
 ACT_ID = "e202303301540311"  # 星鐵簽到活動 ID
-SIGN_URL = f"https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=zh-tw&act_id={ACT_ID}"
+SIGN_URL = f"https://sg-public-api.hoyolab.com/event/luna/os/sign?lang=ja-jp&act_id={ACT_ID}"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
